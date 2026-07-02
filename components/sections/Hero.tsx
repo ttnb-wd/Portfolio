@@ -7,6 +7,7 @@ import Floating from "@/components/hero/animations/Floating";
 import ScrollIndicator from "@/components/hero/ScrollIndicator";
 import MouseParallax from "@/components/hero/animations/MouseParallax";
 import CursorGlow from "@/components/hero/animations/CursorGlow";
+import AuroraBackground from "@/components/hero/AuroraBackground";
 
 export default function Hero() {
   return (
@@ -15,8 +16,8 @@ export default function Hero() {
       className="relative overflow-hidden bg-[#09090B] pt-28"
     >
       <HeroBackground />
-      <CursorGlow />
-      <Container className="relative z-10 flex min-h-[85vh] items-center">
+      <CursorGlow />    
+      <Container className="relative z-10 flex min-h-screen items-center">
         <div className="grid w-full items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <FadeUp delay={0.1}>
             <HeroContent />

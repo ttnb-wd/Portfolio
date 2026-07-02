@@ -1,12 +1,21 @@
+import Container from "@/components/shared/Container";
+import ContactHeader from "@/components/contact/ContactHeader";
+import ContactCard from "@/components/contact/ContactCard";
+import ContactCTA from "@/components/contact/ContactCTA";
+
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="flex min-h-screen items-center justify-center"
+      className="bg-[#09090B] py-32"
     >
-      <h2 className="text-5xl font-bold text-white">
-        Contact
-      </h2>
+      <Container>
+        <ContactHeader />
+        <div className="mt-12">
+            <ContactCard />
+        </div>
+        <ContactCTA />
+      </Container>
     </section>
   );
 }

@@ -1,12 +1,17 @@
+import Container from "@/components/shared/Container";
+import ProjectsHeader from "@/components/projects/ProjectsHeader";
+import ProjectsGrid from "@/components/projects/ProjectsGrid";
+
 export default function Projects() {
   return (
     <section
       id="projects"
-      className="flex min-h-screen items-center justify-center"
+      className="bg-[#09090B] py-32"
     >
-      <h2 className="text-5xl font-bold text-white">
-        Projects
-      </h2>
+      <Container>
+        <ProjectsHeader />
+        <ProjectsGrid />
+      </Container>
     </section>
   );
 }

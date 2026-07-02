@@ -1,0 +1,175 @@
+"use client";
+
+import type { IconType } from "react-icons";
+import {
+  SiHtml5,
+  SiCss,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiSupabase,
+  SiGit,
+  SiGithub,
+  SiFigma,
+  SiPostman,
+  SiOpenai,
+  SiGoogle,
+  SiAnthropic,
+  SiPython,
+  SiNodedotjs,
+} from "react-icons/si";
+
+import { Bot, Code2 } from "lucide-react";
+
+export type Skill = {
+  name: string;
+  icon: IconType | React.ElementType;
+  color: string;
+  description: string;
+  category: "Frontend" | "Backend" | "Database" | "Tools" | "AI";
+};
+
+export const skills: Skill[] = [
+  {
+    name: "HTML5",
+    icon: SiHtml5,
+    color: "#E34F26",
+    description: "Semantic & Accessible Markup",
+    category: "Frontend",
+  },
+  {
+    name: "CSS3",
+    icon: SiCss,
+    color: "#1572B6",
+    description: "Responsive Layouts",
+    category: "Frontend",
+  },
+  {
+    name: "JavaScript",
+    icon: SiJavascript,
+    color: "#F7DF1E",
+    description: "Modern JavaScript",
+    category: "Frontend",
+  },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+    color: "#3178C6",
+    description: "Type-safe Development",
+    category: "Frontend",
+  },
+  {
+    name: "React",
+    icon: SiReact,
+    color: "#61DAFB",
+    description: "Interactive UI",
+    category: "Frontend",
+  },
+  {
+    name: "Next.js",
+    icon: SiNextdotjs,
+    color: "#FFFFFF",
+    description: "React Framework",
+    category: "Frontend",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: SiTailwindcss,
+    color: "#06B6D4",
+    description: "Utility-first CSS",
+    category: "Frontend",
+  },
+  {
+    name: "Supabase",
+    icon: SiSupabase,
+    color: "#3ECF8E",
+    description: "Backend & Database",
+    category: "Database",
+  },
+  {
+    name: "Python",
+    icon: SiPython,
+    color: "#3776AB",
+    description: "Backend scripting & automation",
+    category: "Backend",
+  },
+  {
+    name: "Node.js",
+    icon: SiNodedotjs,
+    color: "#339933",
+    description: "Server-side JavaScript",
+    category: "Backend",
+  },
+  {
+    name: "Git",
+    icon: SiGit,
+    color: "#F05032",
+    description: "Version Control",
+    category: "Tools",
+  },
+  {
+    name: "GitHub",
+    icon: SiGithub,
+    color: "#FFFFFF",
+    description: "Code Collaboration",
+    category: "Tools",
+  },
+  {
+    name: "Figma",
+    icon: SiFigma,
+    color: "#A259FF",
+    description: "UI / UX Design",
+    category: "Tools",
+  },
+  {
+    name: "Postman",
+    icon: SiPostman,
+    color: "#FF6C37",
+    description: "API Testing",
+    category: "Tools",
+  },
+  {
+    name: "Codex",
+    icon: SiOpenai,
+    color: "#13AA52",
+    description: "AI-powered coding assistant",
+    category: "AI",
+  },
+  {
+    name: "ChatGPT",
+    icon: SiOpenai,
+    color: "#12A0D8",
+    description: "Conversational AI assistant",
+    category: "AI",
+  },
+  {
+    name: "Gemini",
+    icon: SiGoogle,
+    color: "#34A853",
+    description: "Next-gen generative AI",
+    category: "AI",
+  },
+  {
+    name: "Claude",
+    icon: SiAnthropic,
+    color: "#3F3F46",
+    description: "Creative AI assistant",
+    category: "AI",
+  },
+  {
+    name: "Cursor AI",
+    icon: Bot,
+    color: "#22C55E",
+    description: "AI Coding Assistant",
+    category: "AI",
+  },
+  {
+    name: "VS Code",
+    icon: Code2,
+    color: "#3B82F6",
+    description: "Code Editor",
+    category: "Tools",
+  },
+];

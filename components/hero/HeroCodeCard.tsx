@@ -2,14 +2,15 @@ export default function HeroCodeCard() {
   return (
     <div className="group relative flex items-center justify-center">
       {/* Glow */}
-      <div className="absolute -inset-6 rounded-[40px] bg-cyan-500/20 blur-3xl transition-all duration-700 group-hover:scale-110" />
+      <div className="absolute -inset-4 rounded-[36px] bg-cyan-500/15 blur-3xl transition-all duration-700 group-hover:scale-110" />
 
       {/* Card */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent" />
-      <div className="relative w-full max-w-xl overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/70 shadow-2xl backdrop-blur-2xl transition-all duration-500 hover:-translate-y-3 hover:border-cyan-400/40 hover:shadow-cyan-500/20">
+      
+
+      <div className="relative w-full max-w-[500px] overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/70 shadow-2xl backdrop-blur-2xl transition-all duration-500 hover:-translate-y-3 hover:border-cyan-400/40 hover:shadow-cyan-500/20">
 
         {/* Window Header */}
-        <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
+        <div className="flex items-center justify-between border-b border-white/10 px-5 py-3">
 
           <div className="flex items-center gap-2">
             <div className="h-3 w-3 rounded-full bg-red-500" />
@@ -21,11 +22,11 @@ export default function HeroCodeCard() {
             portfolio.tsx
           </span>
 
-          <div className="w-14" />
+          <div className="w-12" />
         </div>
 
         {/* Code */}
-        <div className="space-y-2 p-8 font-mono text-sm leading-7">
+        <div className="space-y-2 p-7 font-mono text-[14px] leading-7">
 
           <p>
             <span className="text-pink-400">const</span>{" "}
@@ -77,25 +78,24 @@ export default function HeroCodeCard() {
           </p>
 
           {/* Divider */}
-          <div className="my-6 h-px bg-white/10" />
+          <div className="my-5 h-px bg-white/10" />
 
           {/* Status */}
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2">
 
-            <span className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-2 text-xs font-medium text-emerald-400">
+            <span className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1.5 text-[11px] font-medium text-emerald-400">
               ✓ Available
             </span>
 
-            <span className="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-2 text-xs font-medium text-cyan-400">
+            <span className="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1.5 text-[11px] font-medium text-cyan-400">
               🤖 AI Assisted
             </span>
 
-            <span className="rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-xs font-medium text-violet-400">
+            <span className="rounded-full border border-violet-500/20 bg-violet-500/10 px-3 py-1.5 text-[11px] font-medium text-violet-400">
               🚀 Open to Work
             </span>
 
           </div>
-
         </div>
       </div>
     </div>
