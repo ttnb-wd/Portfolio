@@ -3,14 +3,14 @@ import { Variants } from "framer-motion";
 export const fadeUp: Variants = {
   hidden: {
     opacity: 0,
-    y: 40,
+    y: 30,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: [0.22, 1, 0.36, 1],
     },
   },
 };
@@ -18,14 +18,14 @@ export const fadeUp: Variants = {
 export const fadeLeft: Variants = {
   hidden: {
     opacity: 0,
-    x: 40,
+    x: -30,
   },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: [0.22, 1, 0.36, 1],
     },
   },
 };
@@ -33,14 +33,14 @@ export const fadeLeft: Variants = {
 export const fadeRight: Variants = {
   hidden: {
     opacity: 0,
-    x: -40,
+    x: 30,
   },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: [0.22, 1, 0.36, 1],
     },
   },
 };
@@ -55,7 +55,6 @@ export const scaleIn: Variants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: "easeOut",
     },
   },
 };
