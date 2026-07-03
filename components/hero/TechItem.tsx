@@ -1,14 +1,11 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
-type TechItemProps = {
+interface TechItemProps {
   icon: ReactNode;
   label: string;
-};
+}
 
-export default function TechItem({
-  icon,
-  label,
-}: TechItemProps) {
+export default function TechItem({ icon, label }: TechItemProps) {
   return (
     <div
       className="
@@ -18,24 +15,26 @@ export default function TechItem({
       gap-2
       rounded-full
       border
-      border-white/10
-      bg-white/5
+      border-slate-200
+      bg-white
       px-1.5
       py-0.5
-      backdrop-blur-xl
+      shadow-sm
       transition-all
       duration-300
       hover:-translate-y-1
-      hover:border-cyan-400/40
-      hover:bg-cyan-500/10
-      hover:shadow-[0_0_20px_rgba(34,211,238,.15)]
+      hover:border-blue-300
+      hover:bg-blue-50
+      hover:shadow-[0_4px_12px_rgba(37,99,235,0.12)]
       "
+      role="listitem"
+      aria-label={label}
     >
-      <span className="flex h-5 w-5 items-center justify-center transition-transform duration-300 group-hover:scale-110">
+      <span className="flex h-5 w-5 items-center justify-center transition-transform duration-300 group-hover:scale-110" aria-hidden="true">
         {icon}
       </span>
 
-      <span className="text-xs font-medium text-zinc-300 group-hover:text-white">
+      <span className="text-xs font-medium text-slate-700 group-hover:text-blue-700">
         {label}
       </span>
     </div>

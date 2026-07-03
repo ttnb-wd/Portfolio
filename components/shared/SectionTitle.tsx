@@ -1,12 +1,9 @@
-type SectionTitleProps = {
+interface SectionTitleProps {
   title: string;
   subtitle?: string;
-};
+}
 
-export default function SectionTitle({
-  title,
-  subtitle,
-}: SectionTitleProps) {
+export default function SectionTitle({ title, subtitle }: SectionTitleProps) {
   return (
     <div className="mb-16 text-center">
       <h2 className="text-4xl font-bold tracking-tight md:text-5xl">

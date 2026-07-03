@@ -6,7 +6,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="bg-[#09090B] py-32"
+      className="bg-slate-50 py-32"
     >
       <Container>
         <ExperienceHeader />

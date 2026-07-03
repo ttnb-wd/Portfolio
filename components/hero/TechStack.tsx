@@ -12,7 +12,7 @@ import TechItem from "./TechItem";
 
 export default function TechStack() {
   return (
-    <div className="mt-10 flex flex-wrap justify-start gap-3">
+    <div className="mt-10 flex flex-wrap justify-start gap-3" role="list" aria-label="Technologies I use">
 
       <TechItem
         icon={<SiHtml5 className="h-3.5 w-3.5 text-orange-400" />}

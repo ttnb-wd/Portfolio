@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #09090b;
-  --foreground: #fafafa;
+  /* Theme */
+  --background: #f8fafc;
+  --foreground: #0f172a;
 
-  --primary: #ffffff;
-  --secondary: #a1a1aa;
+  --primary: #2563eb;
+  --secondary: #64748b;
 
-  --border: rgba(255, 255, 255, 0.08);
+  --card: #ffffff;
+  --border: #e2e8f0;
 
-  --card: rgba(255, 255, 255, 0.03);
+  --glass: rgba(255, 255, 255, 0.75);
+  --accent: rgba(37, 99, 235, 0.1);
 
   --max-width: 1280px;
 }
@@ -26,6 +29,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
@@ -35,17 +39,17 @@ body {
   padding-inline: 1.5rem;
 }
 
-/* Gradient Animation */
+/* ===========================
+   Gradient Animation
+=========================== */
 
 @keyframes gradient {
   0% {
     background-position: left center;
   }
-
   50% {
     background-position: right center;
   }
-
   100% {
     background-position: left center;
   }
@@ -55,7 +59,9 @@ body {
   animation: gradient 6s ease infinite;
 }
 
-/* Skeleton Shimmer Animation */
+/* ===========================
+   Skeleton Shimmer
+=========================== */
 
 @keyframes shimmer {
   0% {
@@ -80,32 +86,38 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.08),
+    rgba(37, 99, 235, 0.12),
     transparent
   );
   animation: shimmer 2.5s linear infinite;
 }
 
-/* Better text selection */
+/* ===========================
+   Text Selection
+=========================== */
+
 ::selection {
-  background: rgba(34, 211, 238, 0.35);
-  color: white;
+  background: rgba(37, 99, 235, 0.2);
+  color: #0f172a;
 }
 
-/* Thin modern scrollbar */
+/* ===========================
+   Scrollbar
+=========================== */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(
     to bottom,
-    rgb(34, 211, 238),
-    rgb(59, 130, 246)
+    #3b82f6,
+    #2563eb
   );
   border-radius: 999px;
 }
@@ -113,7 +125,59 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(
     to bottom,
-    rgb(103, 232, 249),
-    rgb(96, 165, 250)
+    #60a5fa,
+    #3b82f6
   );
+}
+
+/* ===========================
+   Glass Card
+=========================== */
+
+.glass-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.15);
+  transform: translateY(-4px);
+}
+
+/* ===========================
+   Section
+=========================== */
+
+section {
+  scroll-margin-top: 100px;
+}
+
+/* ===========================
+   Screen Reader Only (Accessibility)
+=========================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
 }

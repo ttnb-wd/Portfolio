@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-[#09090B] py-32"
+      className="bg-slate-50 py-32"
     >
       <Container>
         <ContactHeader />

@@ -1,6 +1,6 @@
 "use client";
 
-import type { IconType } from "react-icons";
+import type { Skill } from "@/types";
 import {
   SiHtml5,
   SiCss,
@@ -22,14 +22,6 @@ import {
 } from "react-icons/si";
 
 import { Bot, Code2 } from "lucide-react";
-
-export type Skill = {
-  name: string;
-  icon: IconType | React.ElementType;
-  color: string;
-  description: string;
-  category: "Frontend" | "Backend" | "Database" | "Tools" | "AI";
-};
 
 export const skills: Skill[] = [
   {

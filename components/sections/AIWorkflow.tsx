@@ -6,7 +6,7 @@ export default function AIWorkflow() {
   return (
     <section
       id="workflow"
-      className="bg-[#09090B] py-32"
+      className="bg-slate-50 py-32"
     >
       <Container>
         <WorkflowHeader />

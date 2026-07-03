@@ -10,10 +10,10 @@ const categories = ["All", "Frontend", "Backend", "Database", "Tools", "AI"] as 
 type Category = typeof categories[number];
 
 const tabStyles = (active: boolean) =>
-  `rounded-full px-4 py-2 text-sm font-medium transition duration-200 ${
+  `rounded-full px-4 py-2 text-sm font-medium transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 ${
     active
-      ? "border border-cyan-500 bg-cyan-500/10 text-cyan-300 shadow-sm shadow-cyan-500/10"
-      : "border border-white/10 bg-white/5 text-zinc-300 hover:border-cyan-500/20 hover:bg-white/10"
+      ? "border border-blue-600 bg-blue-600 text-white shadow-sm"
+      : "border border-slate-300 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700"
   }`;
 
 const cardVariants = {
@@ -45,6 +45,7 @@ export default function AnimatedSkillsGrid() {
               onClick={() => setActiveCategory(category)}
               className={tabStyles(isActive)}
               aria-pressed={isActive}
+              aria-label={`Filter skills by ${category}`}
             >
               {category}
             </button>

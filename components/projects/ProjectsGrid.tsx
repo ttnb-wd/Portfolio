@@ -1,15 +1,27 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { projects } from "./projects";
 import ProjectCard from "./ProjectCard";
+import { staggerContainer } from "@/lib/animations";
 
 export default function ProjectsGrid() {
   return (
-    <div
+    <motion.div
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.15 }}
       className="
+        mx-auto
         grid
+        max-w-7xl
         grid-cols-1
         gap-6
         md:grid-cols-2
+        lg:gap-7
         xl:grid-cols-3
+        xl:gap-8
       "
     >
       {projects.map((project) => (
@@ -18,6 +30,6 @@ export default function ProjectsGrid() {
           project={project}
         />
       ))}
-    </div>
+    </motion.div>
   );
 }

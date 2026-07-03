@@ -8,7 +8,7 @@ export default function FooterTech() {
 
   return (
     <div className="space-y-5">
-      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-zinc-500">
+      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
         Built with
       </p>
 
@@ -16,7 +16,7 @@ export default function FooterTech() {
         {tech.map((item) => (
           <span
             key={item}
-            className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-300 transition hover:border-cyan-400/40 hover:text-cyan-300"
+            className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm text-slate-700 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700"
           >
             {item}
           </span>

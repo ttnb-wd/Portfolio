@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 
 export default function HeroBackground() {
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-      
-      {/* Animated Grid */}
+    <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+
+      {/* Light Grid */}
       <motion.div
         animate={{
-          opacity: [0.15, 0.25, 0.15],
+          opacity: [0.12, 0.18, 0.12],
           scale: [1, 1.02, 1],
         }}
         transition={{
@@ -17,10 +17,10 @@ export default function HeroBackground() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute inset-0 bg-[linear-gradient(to_right,#27272a_1px,transparent_1px),linear-gradient(to_bottom,#27272a_1px,transparent_1px)] bg-[size:80px_80px] opacity-20"
+        className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:80px_80px]"
       />
 
-      {/* Center Aurora Glow */}
+      {/* Main Blue Glow */}
       <motion.div
         animate={{
           x: [0, 40, -30, 0],
@@ -32,10 +32,10 @@ export default function HeroBackground() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute left-1/2 top-0 h-[900px] w-[900px] -translate-x-1/2 rounded-full bg-cyan-500/25 blur-[160px]"
+        className="absolute left-1/2 top-0 h-[900px] w-[900px] -translate-x-1/2 rounded-full bg-blue-500/15 blur-[170px]"
       />
 
-      {/* Left Blue Glow */}
+      {/* Left Glow */}
       <motion.div
         animate={{
           x: [0, 30, 0],
@@ -46,10 +46,10 @@ export default function HeroBackground() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute left-[-150px] top-1/3 h-[420px] w-[420px] rounded-full bg-blue-500/25 blur-[140px]"
+        className="absolute left-[-150px] top-1/3 h-[420px] w-[420px] rounded-full bg-blue-400/12 blur-[150px]"
       />
 
-      {/* Right Purple Glow */}
+      {/* Right Glow */}
       <motion.div
         animate={{
           x: [0, -30, 0],
@@ -60,25 +60,25 @@ export default function HeroBackground() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute right-[-150px] bottom-0 h-[420px] w-[420px] rounded-full bg-violet-500/25 blur-[140px]"
+        className="absolute right-[-150px] bottom-0 h-[420px] w-[420px] rounded-full bg-blue-300/15 blur-[150px]"
       />
 
       {/* Bottom Glow */}
       <motion.div
         animate={{
           scale: [1, 1.1, 1],
-          opacity: [0.2, 0.3, 0.2],
+          opacity: [0.12, 0.18, 0.12],
         }}
         transition={{
           duration: 10,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute bottom-[-200px] left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-500/25 blur-[180px]"
+        className="absolute bottom-[-200px] left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-blue-400/12 blur-[180px]"
       />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#09090b_85%)]" />
+      {/* Soft White Fade */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_25%,#f8fafc_90%)]" />
     </div>
   );
 }

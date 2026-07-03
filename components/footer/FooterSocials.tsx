@@ -25,7 +25,7 @@ const socials = [
 export default function FooterSocials() {
   return (
     <div className="space-y-5">
-      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500">
+      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
         Connect
       </p>
 
@@ -39,25 +39,26 @@ export default function FooterSocials() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex w-full min-w-[280px] items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4 transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-500/10"
+              className="group flex w-full min-w-[280px] items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 transition-all duration-300 hover:border-blue-300 hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+              aria-label={`Visit my ${social.name} profile: ${social.username}`}
             >
               <div className="flex items-center gap-4">
-                <div className="rounded-xl bg-cyan-500/10 p-3 transition group-hover:bg-cyan-500/20">
-                  <Icon className="h-5 w-5 text-cyan-400" />
+                <div className="rounded-xl bg-blue-100 p-3 transition group-hover:bg-blue-200" aria-hidden="true">
+                  <Icon className="h-5 w-5 text-blue-600" aria-hidden="true" />
                 </div>
 
                 <div>
-                  <p className="text-sm text-zinc-500">
+                  <p className="text-sm text-slate-500">
                     {social.name}
                   </p>
 
-                  <p className="font-medium text-white">
+                  <p className="font-medium text-slate-900">
                     {social.username}
                   </p>
                 </div>
               </div>
 
-              <ArrowUpRight className="h-4 w-4 text-zinc-500 transition group-hover:text-cyan-400 group-hover:translate-x-1 group-hover:-translate-y-1" />
+              <ArrowUpRight className="h-4 w-4 text-slate-400 transition group-hover:text-blue-600 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
             </a>
           );
         })}

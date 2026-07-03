@@ -49,25 +49,26 @@ export default function ContactLinks() {
               key={item.title}
               type="button"
               onClick={handleEmailClick}
-              className="group flex w-full items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:bg-white/10"
+              className="group flex w-full items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-blue-50 hover:shadow-md hover:shadow-blue-100/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+              aria-label="Copy email address to clipboard"
             >
               <div className="flex items-center gap-4">
-                <div className="rounded-xl bg-cyan-500/10 p-3 transition-colors group-hover:bg-cyan-500/20">
-                  <Icon className="h-6 w-6 text-cyan-400" />
+                <div className="rounded-xl bg-blue-100 p-3 transition-colors group-hover:bg-blue-200" aria-hidden="true">
+                  <Icon className="h-6 w-6 text-blue-600" aria-hidden="true" />
                 </div>
 
                 <div>
-                  <p className="text-sm text-zinc-400">
+                  <p className="text-sm text-slate-500">
                     {item.title}
                   </p>
 
-                  <p className="font-medium text-white">
+                  <p className="font-medium text-slate-900">
                     {item.value}
                   </p>
                 </div>
               </div>
 
-              <span className="text-sm text-cyan-400 opacity-0 transition-opacity group-hover:opacity-100">
+              <span className="text-sm text-blue-600 opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true">
                 Copy →
               </span>
             </button>
@@ -80,25 +81,26 @@ export default function ContactLinks() {
             href={item.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:bg-white/10"
+            className="group flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-blue-50 hover:shadow-md hover:shadow-blue-100/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+            aria-label={`Visit my ${item.title} profile: ${item.value}`}
           >
             <div className="flex items-center gap-4">
-              <div className="rounded-xl bg-cyan-500/10 p-3 transition-colors group-hover:bg-cyan-500/20">
-                <Icon className="h-6 w-6 text-cyan-400" />
+              <div className="rounded-xl bg-blue-100 p-3 transition-colors group-hover:bg-blue-200" aria-hidden="true">
+                <Icon className="h-6 w-6 text-blue-600" aria-hidden="true" />
               </div>
 
               <div>
-                <p className="text-sm text-zinc-400">
+                <p className="text-sm text-slate-500">
                   {item.title}
                 </p>
 
-                <p className="font-medium text-white">
+                <p className="font-medium text-slate-900">
                   {item.value}
                 </p>
               </div>
             </div>
 
-            <span className="text-sm text-cyan-400 opacity-0 transition-opacity group-hover:opacity-100">
+            <span className="text-sm text-blue-600 opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true">
               Open →
             </span>
           </a>

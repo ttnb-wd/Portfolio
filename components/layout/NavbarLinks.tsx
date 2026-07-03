@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 
 const navItems = [
@@ -9,7 +9,7 @@ const navItems = [
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
-];
+] as const;
 
 export default function NavbarLinks() {
   const [active, setActive] = useState("home");
@@ -38,7 +38,7 @@ export default function NavbarLinks() {
   }, []);
 
   return (
-    <nav className="hidden md:flex items-center gap-2 rounded-full border border-white/10 bg-white/5 p-1 backdrop-blur-xl">
+    <nav className="hidden md:flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 p-1 backdrop-blur-xl" aria-label="Main navigation">
       {navItems.map((item) => {
         const id = item.href.replace("#", "");
         const isActive = active === id;
@@ -51,7 +51,9 @@ export default function NavbarLinks() {
             onClick={() => setActive(id)}
             onMouseEnter={() => setHovered(id)}
             onMouseLeave={() => setHovered(null)}
-            className="relative flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium"
+            className="relative flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+            aria-current={isActive ? "page" : undefined}
+            aria-label={`Navigate to ${item.label} section`}
           >
             {/* PILLS */}
             {(isActive || isHovered) && (
@@ -62,7 +64,7 @@ export default function NavbarLinks() {
                   stiffness: 500,
                   damping: 35,
                 }}
-                className="absolute inset-[2px] rounded-full bg-cyan-500/15 ring-1 ring-cyan-400/20"
+                className="absolute inset-[2px] rounded-full bg-blue-100 ring-1 ring-blue-300"
               />
             )}
 
@@ -70,8 +72,8 @@ export default function NavbarLinks() {
             <span
               className={`relative z-10 flex items-center justify-center transition-colors ${
                 isActive || isHovered
-                  ? "text-cyan-300"
-                  : "text-zinc-300 hover:text-white"
+                  ? "text-blue-700"
+                  : "text-slate-600 hover:text-slate-900"
               }`}
             >
               {item.label}

@@ -18,14 +18,15 @@ const workflow = [
 
 export default function AIWorkflow() {
   return (
-    <div className="mt-16 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
-      <h3 className="text-2xl font-bold text-white">
+    <div className="mt-14 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100/50 md:mt-16 md:p-8">
+      <h3 className="text-xl font-bold text-slate-900 md:text-2xl">
         AI-Assisted Workflow
       </h3>
 
-      <p className="mt-3 text-zinc-400 leading-7">
-        AI helps me speed up research, planning, debugging, and repetitive tasks
-        while I stay responsible for architecture, implementation, and final decisions.
+      <p className="mt-4 text-sm leading-7 text-slate-600 md:text-base md:leading-8">
+        AI helps me speed up research, planning, debugging, and repetitive
+        tasks while I stay responsible for architecture, implementation, and
+        final engineering decisions.
       </p>
 
       <div className="mt-10 space-y-5">
@@ -33,29 +34,33 @@ export default function AIWorkflow() {
           const Icon = step.icon;
 
           return (
-            <div key={step.title}>
-              <div className="flex items-center gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-cyan-500/10 text-cyan-400">
+            <div
+              key={step.title}
+              className="group"
+            >
+              <div className="flex items-center gap-4 rounded-2xl p-2 transition-all duration-300 hover:bg-blue-50">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-blue-300 bg-blue-50 text-blue-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-100">
                   <Icon className="h-5 w-5" />
                 </div>
 
-                <span className="text-lg font-medium text-white">
+                <span className="text-base font-medium text-slate-900 md:text-lg">
                   {step.title}
                 </span>
               </div>
 
               {index !== workflow.length - 1 && (
-                <div className="ml-5 mt-2 h-6 w-px bg-white/10" />
+                <div className="ml-[22px] mt-2 h-6 w-px bg-gradient-to-b from-blue-300 to-transparent" />
               )}
             </div>
           );
         })}
       </div>
 
-      <div className="mt-10 rounded-2xl border border-cyan-500/20 bg-cyan-500/10 p-4">
-        <p className="text-sm leading-7 text-cyan-200">
-          "I use AI to improve productivity and code quality—not to replace
-          problem solving, critical thinking, or software engineering fundamentals."
+      <div className="mt-10 rounded-2xl border border-blue-200 bg-gradient-to-r from-blue-50 to-sky-50 p-5">
+        <p className="text-sm leading-7 text-blue-700 italic">
+          “I use AI to improve productivity and code quality—not to replace
+          problem solving, critical thinking, or software engineering
+          fundamentals.”
         </p>
       </div>
     </div>

@@ -1,13 +1,9 @@
 "use client";
 
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { ReactNode } from "react";
+import type { BaseComponentProps } from "@/types";
 
-type Props = {
-  children: ReactNode;
-};
-
-export default function MouseParallax({ children }: Props) {
+export default function MouseParallax({ children }: BaseComponentProps) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 

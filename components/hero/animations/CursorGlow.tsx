@@ -40,7 +40,7 @@ export default function CursorGlow() {
           -translate-x-1/2
           -translate-y-1/2
           rounded-full
-          bg-cyan-500/20
+          bg-blue-500/15
           blur-[150px]
         "
       />

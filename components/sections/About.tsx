@@ -15,7 +15,7 @@ export default function About() {
   return (
     <motion.section
       id="about"
-      className="bg-[#09090B] py-32"
+      className="bg-slate-50 py-32"
       variants={staggerContainer}
       initial="hidden"
       whileInView="visible"

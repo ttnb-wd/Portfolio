@@ -1,10 +1,11 @@
 "use client";
-import type { Experience } from "./experience";
-import { motion } from "framer-motion";
 
-type TimelineItemProps = {
+import { motion } from "framer-motion";
+import type { Experience } from "@/types";
+
+interface TimelineItemProps {
   item: Experience;
-};
+}
 
 export default function TimelineItem({
   item,
@@ -27,31 +28,34 @@ export default function TimelineItem({
       transition={{
         duration: 0.6,
       }}
+      role="article"
+      aria-label={`${item.title} - ${item.year}`}
     >
       {/* Timeline Dot */}
-      <div className="absolute left-0 top-2 flex h-6 w-6 items-center justify-center rounded-full border-4 border-[#09090B] bg-cyan-400 shadow-[0_0_35px_rgba(34,211,238,1)]">
+      <div className="absolute left-0 top-2 flex h-6 w-6 items-center justify-center rounded-full border-4 border-slate-50 bg-blue-600 shadow-lg shadow-blue-500/40" aria-hidden="true">
         <div className="h-2 w-2 rounded-full bg-white" />
       </div>
 
       {/* Card */}
-      <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition-all duration-300 hover:border-cyan-500/40 hover:bg-white/10 hover:shadow-[0_0_35px_rgba(34,211,238,0.08)]">
-        <span className="text-sm font-semibold tracking-wider text-cyan-400">
+      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-blue-300 hover:bg-blue-50/50 hover:shadow-lg hover:shadow-blue-100/50">
+        <span className="text-sm font-semibold tracking-wider text-blue-600">
           {item.year}
         </span>
 
-        <h3 className="mt-2 text-2xl font-bold text-white">
+        <h3 className="mt-2 text-2xl font-bold text-slate-900">
           {item.title}
         </h3>
 
-        <p className="mt-4 leading-7 text-zinc-400">
+        <p className="mt-4 leading-7 text-slate-600">
           {item.description}
         </p>
 
-        <div className="mt-6 flex flex-wrap gap-2">
+        <div className="mt-6 flex flex-wrap gap-2" role="list" aria-label="Technologies used">
           {item.stack.map((tech) => (
             <span
               key={tech}
-              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300"
+              role="listitem"
+              className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs text-slate-700"
             >
               {tech}
             </span>

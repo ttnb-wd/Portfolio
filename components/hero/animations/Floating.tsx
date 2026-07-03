@@ -1,17 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import type { BaseComponentProps } from "@/types";
 
-type FloatingProps = {
-  children: ReactNode;
-  className?: string;
-};
-
-export default function Floating({
-  children,
-  className = "",
-}: FloatingProps) {
+export default function Floating({ children, className = "" }: BaseComponentProps) {
   return (
     <motion.div
       animate={{

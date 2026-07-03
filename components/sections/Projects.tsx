@@ -6,7 +6,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="bg-[#09090B] py-32"
+      className="bg-slate-50 py-32"
     >
       <Container>
         <ProjectsHeader />

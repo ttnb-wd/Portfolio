@@ -1,9 +1,4 @@
-export type Experience = {
-  year: string;
-  title: string;
-  description: string;
-  stack: string[];
-};
+import type { Experience } from "@/types";
 
 export const experiences: Experience[] = [
   {

@@ -7,11 +7,7 @@ import {
   Rocket,
 } from "lucide-react";
 
-export type WorkflowStep = {
-  title: string;
-  description: string;
-  icon: React.ElementType;
-};
+import type { WorkflowStep } from "@/types";
 
 export const workflow: WorkflowStep[] = [
   {

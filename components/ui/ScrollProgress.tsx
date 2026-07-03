@@ -16,13 +16,19 @@ export default function ScrollProgress() {
       {/* Glow */}
       <motion.div
         style={{ scaleX }}
-        className="fixed left-0 top-0 z-[99999] h-[10px] w-full origin-left bg-cyan-400/60 blur-md"
+        className="fixed left-0 top-0 z-[99999] h-[6px] w-full origin-left bg-blue-400/40 blur-sm"
+        aria-hidden="true"
       />
 
       {/* Main Bar */}
       <motion.div
         style={{ scaleX }}
-        className="fixed left-0 top-0 z-[100000] h-1 w-full origin-left bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500"
+        className="fixed left-0 top-0 z-[100000] h-1 w-full origin-left bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600"
+        role="progressbar"
+        aria-label="Page scroll progress"
+        aria-valuenow={Math.round(scrollYProgress.get() * 100)}
+        aria-valuemin={0}
+        aria-valuemax={100}
       />
     </>
   );

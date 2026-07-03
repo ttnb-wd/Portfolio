@@ -1,19 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import type { AnimatedComponentProps } from "@/types";
 
-type FadeUpProps = {
-  children: ReactNode;
-  delay?: number;
-  className?: string;
-};
-
-export default function FadeUp({
-  children,
-  delay = 0,
-  className = "",
-}: FadeUpProps) {
+export default function FadeUp({ children, delay = 0, className = "" }: AnimatedComponentProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}

@@ -17,7 +17,7 @@ export default function AuroraBackground() {
           repeatType: "mirror",
           ease: "easeInOut",
         }}
-        className="absolute -left-40 top-0 h-[420px] w-[420px] rounded-full bg-cyan-500/20 blur-[120px]"
+        className="absolute -left-40 top-0 h-[420px] w-[420px] rounded-full bg-blue-500/12 blur-[120px]"
       />
 
       {/* Bottom Right Glow */}
@@ -32,7 +32,7 @@ export default function AuroraBackground() {
           repeatType: "mirror",
           ease: "easeInOut",
         }}
-        className="absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-blue-500/20 blur-[120px]"
+        className="absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-blue-400/15 blur-[120px]"
       />
 
       {/* Center Glow */}
@@ -45,7 +45,7 @@ export default function AuroraBackground() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-[100px]"
+        className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-400/8 blur-[100px]"
       />
     </div>
   );
