@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import ScrollProgress from "../components/ui/ScrollProgress";
 import BackToTop from "@/components/ui/BackToTop";
+import GlobalBackground from "@/components/background/GlobalBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -330,6 +331,9 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* Global Animated Background */}
+        <GlobalBackground />
+        
         {/* Skip to main content link for keyboard navigation */}
         <a
           href="#main-content"

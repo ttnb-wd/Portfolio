@@ -10,10 +10,10 @@ const categories = ["All", "Frontend", "Backend", "Database", "Tools", "AI"] as 
 type Category = typeof categories[number];
 
 const tabStyles = (active: boolean) =>
-  `rounded-full px-4 py-2 text-sm font-medium transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 ${
+  `rounded-full px-4 py-2 text-sm font-medium transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 ${
     active
-      ? "border border-blue-600 bg-blue-600 text-white shadow-sm"
-      : "border border-slate-300 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700"
+      ? "border border-blue-600 bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg shadow-blue-500/30"
+      : "border border-slate-300 bg-white text-slate-700 hover:border-blue-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-sky-50 hover:text-blue-700 hover:shadow-md hover:shadow-blue-100/30"
   }`;
 
 const cardVariants = {
@@ -39,16 +39,19 @@ export default function AnimatedSkillsGrid() {
         {categories.map((category) => {
           const isActive = category === activeCategory;
           return (
-            <button
+            <motion.button
               key={category}
               type="button"
               onClick={() => setActiveCategory(category)}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
               className={tabStyles(isActive)}
               aria-pressed={isActive}
               aria-label={`Filter skills by ${category}`}
             >
               {category}
-            </button>
+            </motion.button>
           );
         })}
       </div>

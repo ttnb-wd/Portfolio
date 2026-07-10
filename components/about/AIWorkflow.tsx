@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import {
   Lightbulb,
   ClipboardList,
@@ -18,7 +21,11 @@ const workflow = [
 
 export default function AIWorkflow() {
   return (
-    <div className="mt-14 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100/50 md:mt-16 md:p-8">
+    <motion.div
+      whileHover={{ y: -6 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      className="mt-14 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-500 ease-out hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50 md:mt-16 md:p-8"
+    >
       <h3 className="text-xl font-bold text-slate-900 md:text-2xl">
         AI-Assisted Workflow
       </h3>
@@ -57,12 +64,12 @@ export default function AIWorkflow() {
       </div>
 
       <div className="mt-10 rounded-2xl border border-blue-200 bg-gradient-to-r from-blue-50 to-sky-50 p-5">
-        <p className="text-sm leading-7 text-blue-700 italic">
-          “I use AI to improve productivity and code quality—not to replace
+        <p className="text-sm leading-7 italic text-blue-700">
+          "I use AI to improve productivity and code quality—not to replace
           problem solving, critical thinking, or software engineering
-          fundamentals.”
+          fundamentals."
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }

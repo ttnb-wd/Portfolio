@@ -6,7 +6,7 @@ import { SiGithub } from "react-icons/si";
 import type { Project } from "@/types";
 import { Button } from "@/components/ui/button";
 import BrowserMockup from "./BrowserMockup";
-import { fadeUp } from "@/lib/animations";
+import { scaleInSubtle } from "@/lib/animations";
 
 interface ProjectCardProps {
   project: Project;
@@ -41,12 +41,17 @@ function ProjectCard({ project }: ProjectCardProps) {
   return (
     <>
       <motion.article
-        variants={fadeUp}
+        variants={scaleInSubtle}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.3 }}
         whileHover={{ y: -6 }}
-        className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50"
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 20,
+        }}
+        className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-500 ease-out hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50"
       >
         {/* Status Badge */}
         <div className="absolute right-3 top-3 z-20">
@@ -106,17 +111,24 @@ function ProjectCard({ project }: ProjectCardProps) {
           {/* Buttons */}
           <div className="mt-auto flex gap-2 pt-6">
             {project.live !== "#" ? (
-              <Button asChild size="sm" className="flex-1 text-xs">
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View live demo of ${project.title}`}
-                >
-                  <ArrowUpRight className="mr-1 h-3 w-3" aria-hidden="true" />
-                  Live Demo
-                </a>
-              </Button>
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                className="flex-1"
+              >
+                <Button asChild size="sm" className="w-full text-xs bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-500">
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View live demo of ${project.title}`}
+                  >
+                    <ArrowUpRight className="mr-1 h-3 w-3" aria-hidden="true" />
+                    Live Demo
+                  </a>
+                </Button>
+              </motion.div>
             ) : (
               <Button
                 size="sm"
@@ -129,22 +141,29 @@ function ProjectCard({ project }: ProjectCardProps) {
             )}
 
             {project.github !== "#" ? (
-              <Button
-                asChild
-                size="sm"
-                variant="outline"
-                className="flex-1 text-xs"
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                className="flex-1"
               >
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View source code of ${project.title} on GitHub`}
+                <Button
+                  asChild
+                  size="sm"
+                  variant="outline"
+                  className="w-full text-xs hover:bg-gradient-to-r hover:from-blue-50 hover:to-sky-50 hover:border-blue-600 hover:text-blue-700 hover:shadow-md hover:shadow-blue-100/30 transition-all duration-500"
                 >
-                  <SiGithub className="mr-1 h-3 w-3" aria-hidden="true" />
-                  GitHub
-                </a>
-              </Button>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View source code of ${project.title} on GitHub`}
+                  >
+                    <SiGithub className="mr-1 h-3 w-3" aria-hidden="true" />
+                    GitHub
+                  </a>
+                </Button>
+              </motion.div>
             ) : (
               <Button
                 size="sm"
@@ -168,7 +187,7 @@ function ProjectCard({ project }: ProjectCardProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 p-6 backdrop-blur-sm"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 p-6"
           role="dialog"
           aria-modal="true"
           aria-labelledby="project-modal-title"
@@ -184,13 +203,16 @@ function ProjectCard({ project }: ProjectCardProps) {
             <h2 id="project-modal-title" className="sr-only">
               {project.title} preview
             </h2>
-            <button
+            <motion.button
               onClick={() => setOpen(false)}
-              className="absolute right-4 top-4 z-20 rounded-full bg-white border border-slate-200 p-2 shadow-lg transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              className="absolute right-4 top-4 z-20 rounded-full bg-white border border-slate-200 p-2 shadow-lg transition-all duration-500 hover:bg-gradient-to-br hover:from-slate-50 hover:to-slate-100 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
               aria-label="Close project preview"
             >
               <X className="h-4 w-4 text-slate-700" aria-hidden="true" />
-            </button>
+            </motion.button>
 
             <BrowserMockup />
           </motion.div>

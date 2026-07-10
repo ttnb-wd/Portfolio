@@ -16,13 +16,12 @@ export default function SkillCard({
   return (
     <motion.div
       whileHover={{
-        y: -8,
-        scale: 1.025,
+        y: -6,
       }}
       transition={{
         type: "spring",
-        stiffness: 240,
-        damping: 22,
+        stiffness: 300,
+        damping: 20,
       }}
       className="
         group
@@ -35,12 +34,13 @@ export default function SkillCard({
         p-6
         shadow-sm
         transition-all
-        duration-300
+        duration-500
+        ease-out
         hover:border-blue-300
-        hover:shadow-lg
+        hover:shadow-xl
         hover:shadow-blue-100/50
         focus-within:border-blue-300
-        focus-within:shadow-lg
+        focus-within:shadow-xl
         focus-within:shadow-blue-100/50
       "
       tabIndex={0}

@@ -1,43 +1,75 @@
+"use client";
+
 import HeroBadge from "./HeroBadge";
 import HeroButtons from "./HeroButtons";
 import TechStack from "./TechStack";
 import HeroStats from "./HeroStats";
+import BlurFadeUp from "./animations/BlurFadeUp";
+import StaggerText from "./animations/StaggerText";
+import ScaleIn from "./animations/ScaleIn";
+import SoftPulse from "./animations/SoftPulse";
+import ScrollParallax from "./animations/ScrollParallax";
 
 export default function HeroContent() {
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-col justify-center lg:mx-0">
-      <HeroBadge />
+    <ScrollParallax speed={0.2}>
+      <div className="flex w-full max-w-xl flex-col justify-center lg:mx-0">
 
-      <h1 className="mt-6 text-4xl font-black leading-[1.08] tracking-tight sm:text-5xl md:mt-8 md:text-6xl lg:text-7xl">
-        <span className="block text-slate-900">
-          Full Stack Developer
-        </span>
+        {/* BADGE */}
+        <SoftPulse>
+          <HeroBadge />
+        </SoftPulse>
 
-        <span className="mt-2 block animate-gradient bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 bg-[length:200%_200%] bg-clip-text text-transparent">
-          Building modern
-        </span>
+        {/* HEADING (STRIPE STYLE FIXED) */}
+        <BlurFadeUp delay={0.1}>
+          <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.05]">
 
-        <span className="block animate-gradient bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 bg-[length:200%_200%] bg-clip-text text-transparent">
-          web experiences
-        </span>
-      </h1>
+            <span className="block text-slate-900">
+              Full Stack Developer
+            </span>
 
-      <p className="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg md:mt-8 md:text-xl md:leading-8">
-        I build beautiful, fast, and scalable web applications using React,
-        Next.js, TypeScript, Supabase, and AI-assisted workflows.
-      </p>
+            <span className="block bg-gradient-to-r from-indigo-500 via-sky-500 to-violet-500 bg-clip-text text-transparent">
+              Building modern
+            </span>
 
-      <div className="mt-8 md:mt-10">
-        <HeroButtons />
+            <span className="block bg-gradient-to-r from-indigo-500 via-sky-500 to-violet-500 bg-clip-text text-transparent">
+              web experiences
+            </span>
+
+          </h1>
+        </BlurFadeUp>
+
+        {/* DESCRIPTION */}
+        <div className="mt-4">
+          <StaggerText
+            text="I build fast, scalable and modern web applications using React, Next.js, TypeScript, Supabase and AI-assisted workflows."
+            className="max-w-lg text-sm leading-6 text-slate-600 sm:text-base"
+            delay={0.3}
+          />
+        </div>
+
+        {/* CTA BUTTONS */}
+        <ScaleIn delay={0.5}>
+          <div className="mt-6">
+            <HeroButtons />
+          </div>
+        </ScaleIn>
+
+        {/* TECH STACK */}
+        <BlurFadeUp delay={0.6}>
+          <div className="mt-6 scale-[0.95] origin-left">
+            <TechStack />
+          </div>
+        </BlurFadeUp>
+
+        {/* STATS */}
+        <BlurFadeUp delay={0.7}>
+          <div className="mt-5 scale-[0.95] origin-left">
+            <HeroStats />
+          </div>
+        </BlurFadeUp>
+
       </div>
-
-      <div className="mt-10 md:mt-12">
-        <TechStack />
-      </div>
-
-      <div className="mt-8">
-        <HeroStats />
-      </div>
-    </div>
+    </ScrollParallax>
   );
 }

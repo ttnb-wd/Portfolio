@@ -21,12 +21,18 @@ export default function TimelineItem({
         opacity: 1,
         y: 0,
       }}
+      whileHover={{
+        y: -6,
+      }}
       viewport={{
         once: true,
         amount: 0.3,
       }}
       transition={{
         duration: 0.6,
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
       }}
       role="article"
       aria-label={`${item.title} - ${item.year}`}
@@ -37,7 +43,7 @@ export default function TimelineItem({
       </div>
 
       {/* Card */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-blue-300 hover:bg-blue-50/50 hover:shadow-lg hover:shadow-blue-100/50">
+      <div className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-500 ease-out hover:border-blue-300 hover:bg-blue-50/50 hover:shadow-xl hover:shadow-blue-100/50">
         <span className="text-sm font-semibold tracking-wider text-blue-600">
           {item.year}
         </span>

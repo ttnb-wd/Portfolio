@@ -15,7 +15,7 @@ import Hero from "@/components/sections/Hero";
 
 export default function Home() {
   return (
-    <>
+    <div className="relative z-10">
       <Navbar />
 
       <main id="main-content">
@@ -29,6 +29,6 @@ export default function Home() {
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 }

@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 const timeline = [
   {
     year: "2023",
@@ -34,8 +38,16 @@ export default function AboutTimeline() {
 
       <div className="space-y-10">
         {timeline.map((item, index) => (
-          <div
+          <motion.div
             key={item.year}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{
+              duration: 0.6,
+              ease: [0.22, 1, 0.36, 1],
+              delay: index * 0.1,
+            }}
             className="group relative flex gap-5 transition-all duration-300 hover:translate-x-1"
           >
             {/* Line */}
@@ -63,7 +75,7 @@ export default function AboutTimeline() {
                 {item.description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

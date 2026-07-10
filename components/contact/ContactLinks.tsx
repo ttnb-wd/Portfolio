@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { toast } from "sonner";
@@ -40,16 +41,26 @@ export default function ContactLinks() {
 
   return (
     <div className="space-y-4">
-      {links.map((item) => {
+      {links.map((item, index) => {
         const Icon = item.icon;
 
         if (item.title === "Email") {
           return (
-            <button
+            <motion.button
               key={item.title}
               type="button"
               onClick={handleEmailClick}
-              className="group flex w-full items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-blue-50 hover:shadow-md hover:shadow-blue-100/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+                delay: index * 0.1,
+              }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="group flex w-full items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-5 text-left transition-all duration-500 hover:-translate-y-1 hover:border-blue-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-sky-50 hover:shadow-lg hover:shadow-blue-100/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
               aria-label="Copy email address to clipboard"
             >
               <div className="flex items-center gap-4">
@@ -71,17 +82,27 @@ export default function ContactLinks() {
               <span className="text-sm text-blue-600 opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true">
                 Copy →
               </span>
-            </button>
+            </motion.button>
           );
         }
 
         return (
-          <a
+          <motion.a
             key={item.title}
             href={item.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-blue-50 hover:shadow-md hover:shadow-blue-100/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{
+              duration: 0.6,
+              ease: [0.22, 1, 0.36, 1],
+              delay: index * 0.1,
+            }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="group flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all duration-500 hover:-translate-y-1 hover:border-blue-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-sky-50 hover:shadow-lg hover:shadow-blue-100/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             aria-label={`Visit my ${item.title} profile: ${item.value}`}
           >
             <div className="flex items-center gap-4">
@@ -103,7 +124,7 @@ export default function ContactLinks() {
             <span className="text-sm text-blue-600 opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true">
               Open →
             </span>
-          </a>
+          </motion.a>
         );
       })}
     </div>

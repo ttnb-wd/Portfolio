@@ -28,10 +28,9 @@ export default function WorkflowCard({ step }: WorkflowCardProps) {
     duration: 0.5,
   }}
   whileHover={{
-    y: -8,
-    scale: 1.02,
+    y: -6,
   }}
-  className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-100/50"
+  className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-500 ease-out hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50"
 >
       {/* Subtle Glow */}
       <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-50/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

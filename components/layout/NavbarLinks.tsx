@@ -38,7 +38,7 @@ export default function NavbarLinks() {
   }, []);
 
   return (
-    <nav className="hidden md:flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 p-1 backdrop-blur-xl" aria-label="Main navigation">
+    <nav className="hidden md:flex items-center gap-2 rounded-full border border-slate-200 bg-white p-1" aria-label="Main navigation">
       {navItems.map((item) => {
         const id = item.href.replace("#", "");
         const isActive = active === id;

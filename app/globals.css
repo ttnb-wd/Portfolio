@@ -135,9 +135,8 @@ body {
 =========================== */
 
 .glass-card {
-  background: var(--glass);
+  background: var(--card);
   border: 1px solid var(--border);
-  backdrop-filter: blur(20px);
   transition: all 0.3s ease;
 }
 
@@ -180,4 +179,18 @@ section {
   overflow: visible;
   clip: auto;
   white-space: normal;
+}
+
+/* ===========================
+   Reduced Motion Support
+=========================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

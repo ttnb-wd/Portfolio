@@ -3,15 +3,15 @@
 import { motion } from "framer-motion";
 import { projects } from "./projects";
 import ProjectCard from "./ProjectCard";
-import { staggerContainer } from "@/lib/animations";
+import { staggerContainerSlow } from "@/lib/animations";
 
 export default function ProjectsGrid() {
   return (
     <motion.div
-      variants={staggerContainer}
+      variants={staggerContainerSlow}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: 0.1 }}
       className="
         mx-auto
         grid

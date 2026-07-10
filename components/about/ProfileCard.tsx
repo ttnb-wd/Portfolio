@@ -8,13 +8,13 @@ export default function ProfileCard() {
     <motion.div
       whileHover={{
         y: -6,
-        scale: 1.015,
       }}
       transition={{
-        duration: 0.35,
-        ease: "easeOut",
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
       }}
-      className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-lg transition-all duration-500 hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50"
+      className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-lg transition-all duration-500 ease-out hover:border-blue-300 hover:shadow-xl hover:shadow-blue-100/50"
     >
       {/* Ambient Glow */}
       <div className="absolute -top-24 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-blue-500/8 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
